@@ -15,8 +15,6 @@ import scipy.spatial as spatial
 import matplotlib.pyplot as plt
 from collections.abc import Iterable
 
-
-
 def Makexyzdistance(t):
     element=np.loadtxt(t,dtype=str,usecols=(0,), skiprows=2)
     x=np.loadtxt(t,dtype=float,usecols=(1), skiprows=2)
@@ -32,7 +30,7 @@ def Makexyzdistance(t):
         #Calculate the distance between every atom
 
             Distance[i][j]=np.sqrt(  ((x[i]-x[j])**2)  + ((y[i]-y[j])**2)  + ((z[i]-z[j]) **2)  )
-    return [Distance, element]  #Output: 2 arrays, 1 with the atoms, each atom corresponds with one whole ARRAY above, storing distances between it and every other atoms
+    return [Distance, element]  
 
 __all__ = ["PersImage"]
 
